@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   display: flex;
-  padding: 20px 0;
+  margin: 50px;
   justify-content: space-around;
 }
 
@@ -26,6 +26,7 @@ button{
   height: 150px;
   padding: 20px;
   color: white;
+  text-align: center;
 }
 
 .App-title {

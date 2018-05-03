@@ -5,6 +5,7 @@ import LineChart from "./components/LineSeries";
 import BarChart from "./components/BarSeries";
 import MarkChart from "./components/MarkSeries";
 import AnimationChart from './components/AnimationChart';
+import ArcChart from './components/ArcSeries';
 
 class App extends Component {
     render() {
@@ -16,11 +17,14 @@ class App extends Component {
                 </div>
                 <div className="App">
                     <LineChart/>
-                    <BarChart/>
                     <MarkChart/>
                 </div>
                 <div className="App">
+                    <BarChart/>
                     <AnimationChart/>
+                </div>
+                <div className="App">
+                    <ArcChart/>
                 </div>
             </div>
         );

@@ -41,7 +41,7 @@ export default class MarkChart extends Component {
                     <YAxis/>
                     <MarkSeries data={this.getData()[0]} curve={'curveMonotoneX'} />
                     <MarkSeries data={this.getData()[1]} curve={'curveMonotoneX'} color="#FF9833"/>
-                    <h4>Last Year</h4>
+                    <h4>Payment</h4>
                 </XYPlot>
             </div>
         )
