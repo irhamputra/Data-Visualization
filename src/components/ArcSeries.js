@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {XYPlot, XAxis, YAxis, ArcSeries, VerticalGridLines, HorizontalGridLines} from "react-vis";
+import {XYPlot, XAxis, YAxis, ArcSeries} from "react-vis";
 
 export default class ArcChart extends Component {
     state = {
@@ -33,13 +33,11 @@ export default class ArcChart extends Component {
         return (
             <div>
                 <XYPlot
-                    xDomain={[ -5, 5 ]}
-                    yDomain={[ -5, 5 ]}
+                    xDomain={[-5, 5]}
+                    yDomain={[-5, 5]}
                     width={400}
                     height={400}
                 >
-                    <VerticalGridLines/>
-                    <HorizontalGridLines/>
                     <XAxis/>
                     <YAxis/>
                     <ArcSeries
@@ -47,16 +45,19 @@ export default class ArcChart extends Component {
                         radiusDomain={[0, 4]}
                         data={this.state.data.map(row => {
                             if (this.state.value && this.state.value.color === row.color) {
-                                return {...row, style: { stroke: 'black', strokeWidth: '1px'}}
+                                return {...row, style: {stroke: 'black', strokeWidth: '1px'}}
                             }
                             return row
                         })}
-                        onValueMouseOver={row => this.setState({ value: row })}
-                        onSeriesMouseOut={() => this.setState({ value: false })}
+                        onValueMouseOver={row => this.setState({value: row})}
+                        onSeriesMouseOut={() => this.setState({value: false})}
                     />
-                    <button onClick={() => {this.setState({
-                        data: this.updateData(),
-                    })}}>Update Data</button>
+                    <button onClick={() => {
+                        this.setState({
+                            data: this.updateData(),
+                        })
+                    }}>Update Data
+                    </button>
                     <h4>Arc Chart with interaction</h4>
                 </XYPlot>
             </div>
